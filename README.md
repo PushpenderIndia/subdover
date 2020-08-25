@@ -149,22 +149,22 @@ $ python subdover.py -s
 ## Screenshots
 
 #### Help Menu
-![](/img/1. Help_Menu.JPG)
+![](/img/1.Help_Menu.JPG)
 
 #### Scan Single Target
-![](/img/2. Scan_Single_Target.JPG)
+![](/img/2.Scan_Single_Target.JPG)
 
 #### Enumerate Subdomaun & Scan 
-![](/img/3. Enum_Subdomain_And_Scan.JPG
+![](/img/3.Enum_Subdomain_And_Scan.JPG
 
 #### Scan Targets from SubdomainList
-![](/img/4. Scan_Target_Using_SubdomainList.JPG)
+![](/img/4.Scan_Target_Using_SubdomainList.JPG)
 
 #### Saving Result
-![](/img/5. Saving_Result.JPG)
+![](/img/5.Saving_Result.JPG)
 
 #### Result of Scan
-![](/img/6. Result_of_Scan.JPG)
+![](/img/6.Result_of_Scan.JPG)
 
 ## Contribute
 
