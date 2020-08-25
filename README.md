@@ -155,7 +155,7 @@ $ python subdover.py -s
 ![](/img/2.Scan_Single_Target.JPG)
 
 #### Enumerate Subdomaun & Scan 
-![](/img/3.Enum_Subdomain_And_Scan.JPG
+![](/img/3.Enum_Subdomain_And_Scan.JPG)
 
 #### Scan Targets from SubdomainList
 ![](/img/4.Scan_Target_Using_SubdomainList.JPG)
