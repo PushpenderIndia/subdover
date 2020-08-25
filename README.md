@@ -62,6 +62,9 @@ $ cd subdover
 $ apt-get update && apt-get install python3-pip
 $ pip3 install -r requirements.txt
 
+# If you want to enumerate subdomain using this script only, then you have to install findomain in your OS
+$ # Check out this URL for Installtion Guide: https://github.com/Edu4rdSHL/findomain
+
 # Giving Executable Permission & Checking Help Menu
 $ chmod +x subdover.py
 $ python3 subdover.py --help
