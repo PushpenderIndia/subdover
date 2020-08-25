@@ -130,7 +130,7 @@ $ python subdover.py -s
 | -h          | --help    | show this help message and exit |
 | -t          | --thread  | Number of Threads to Used. Default=10 |
 | -o          | --output  | Save Result in TXT file|
-| -s         | --fingerprints  | Show Available Fingerprints & Exit|                  
+| -s          | --fingerprints  | Show Available Fingerprints & Exit|                  
 
 * Required Arguments
 
@@ -141,8 +141,63 @@ $ python subdover.py -s
 
 ## Available Fingerprints & CNAMES of potentially vulnerable servies
 
-| Service Name | Status | CNAME | Fingerprints |
-| ------------ | ------ | ----- | ------------ |
+| No. | Service Name    | Status | CNAME | Fingerprints |
+| --- | ------------    | ------ | ----- | ------------ |
+| 1.  | Acquia          | | | |
+| 2.  | Activecampaign  | | | |
+| 3.  | AfterShip       | | | |
+| 4.  | Aha             | | | |
+| 5.  | Apigee          | | | |
+| 6.  | AWS/S3          | | | |      
+| 7.  | Bigcartel       | | | |
+| 8.  | Bitbucket       | | | |
+| 9.  | Brightcove      | | | |
+| 10. | CampaignMonitor | | | |
+| 11. | Cargo           | | | |
+| 12. | CargoCollective | | | |
+| 13. | Cloudfront      | | | |
+| 14. | Desk            | | | |
+| 15. | Fastly          | | | |
+| 16. | Feedpress       | | | |
+| 17. | Freshdesk       | | | |
+| 18. | GetResponse     | | | |
+| 19. | Ghost           | | | |
+| 20. | Github          | | | |
+| 21. | Help Juice      | | | |
+| 22. | Help Scout      | | | |
+| 23. | Heroku          | | | |
+| 24. | Instapage       | | | |
+| 25. | InterCom        | | | |
+| 26. | JetBrains       | | | |
+| 27. | Kajabi          | | | |
+| 28. | Mashery         | | | |
+| 29. | MicrosoftAzure  | | | |
+| 30. | Pantheon        | | | |
+| 31. | Pingdom         | | | |
+| 32. | Proposify       | | | |
+| 33. | Readme.io       | | | |
+| 34. | Shopify         | | | |
+| 35. | SimpleBooklet   | | | |
+| 36. | Smartling       | | | |
+| 37. | Smugmug         | | | |
+| 38. | StatusPage      | | | |
+| 39. | Strikingly      | | | |
+| 40. | Surge.sh        | | | |
+| 41. | Surveygizmo     | | | |
+| 42. | Tave            | | | |
+| 43. | Teamwork        | | | |
+| 44. | Thinkific       | | | |
+| 45. | Tictail         | | | |
+| 46. | Tilda           | | | |
+| 47. | Tumblr          | | | |
+| 48. | Unbounce        | | | |
+| 49. | UptimeRobot     | | | |
+| 50. | UserVoice       | | | |
+| 51. | Vend            | | | |
+| 52. | WebFlow         | | | |
+| 53. | WishPond        | | | |
+| 54. | Wordpress       | | | |
+| 55. | Zendesk         | | | |
 
 #### Will Update This Section Later
 
