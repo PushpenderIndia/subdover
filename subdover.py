@@ -60,7 +60,7 @@ def enumSubdomain(domain):
         subprocess.run(f"findomain --output --target {domain}", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
         
     print(f"[*] Adding Appropriate Web Protocal to Subdomains using httpx ...")
-    subprocess.run(f"cat {domain}.txt | httpx -o {domain}-httpx.txt", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+    subprocess.run(f"cat {domain}.txt | httpx -threads 100 -o {domain}-httpx.txt", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
      
     print(f"[*] Saving Subdomains in TXT file ...")
     os.remove(f"{domain}.txt")
@@ -136,7 +136,7 @@ def testTarget(url):
                     not_success = False
                     if arguments.output:
                         with open(arguments.output, "a") as f:
-                            f.write(f"[+] {fingerprint[1]}      : [Service: {fingerprint[0]}] [CNAME: 404, UnableToVerify-CouldBeFalsePositive] : {url}\n")
+                            f.write(f"[+] {fingerprint[1]} ===> : [Service: {fingerprint[0]}] [CNAME: 404, UnableToVerify-CouldBeFalsePositive] : {url}\n")
                     break                    
          
     if not_success:
@@ -173,16 +173,26 @@ if __name__ == '__main__':
                 number += 1
         
         elif arguments.subdomain_list:
+            print("==================================================================")
+            print(f"[*] Adding Appropriate Web Protocal to Subdomains using httpx ...")
+            subprocess.run(f"cat {arguments.subdomain_list} | httpx -threads 100 -o {arguments.subdomain_list}-httpx.txt", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+            
+            print(f"[*] Writing Subdomains in New TXT file ...")
+            os.remove(f"{arguments.subdomain_list}")
+            os.rename(f"{arguments.subdomain_list}-httpx.txt", f"{arguments.subdomain_list}")
+            print(f"[+] Done !")
+            print("==================================================================")        
             subdomain_list = readTargetFromFile(arguments.subdomain_list)
             
             final_subdomain_list = split_list(subdomain_list, int(arguments.thread))
+
             print("==================================================")
             print(f"[>>] Total Threads                : {arguments.thread}")
             print(f"[>>] Total Targets Loaded         : {len(subdomain_list)}")
             print(f"[>>] Total Fingerprints Available : {len(fingerprints_list)}")
             print("[>>] Scanning Targets for Subdomain Takeover")
             print("==================================================")
-            
+                        
             for thread_num in range(int(arguments.thread)):   
                 t1 = threading.Thread(target=start_scanning, args=(final_subdomain_list[thread_num],)) 
                 t1.start()
