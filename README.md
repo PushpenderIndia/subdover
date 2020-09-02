@@ -3,13 +3,13 @@
     <a href="https://python.org">
     <img src="https://img.shields.io/badge/Python-3.7-green.svg">
   </a>
-  <a href="https://github.com/Technowlogy-Pushpender/subdover/blob/master/LICENSE">
+  <a href="https://github.com/PushpenderIndia/subdover/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/License-BSD%203-lightgrey.svg">
   </a>
-  <a href="https://github.com/Technowlogy-Pushpender/subdover/releases">
+  <a href="https://github.com/PushpenderIndia/subdover/releases">
     <img src="https://img.shields.io/badge/Release-1.0-blue.svg">
   </a>
-    <a href="https://github.com/Technowlogy-Pushpender/subdover">
+    <a href="https://github.com/PushpenderIndia/subdover">
     <img src="https://img.shields.io/badge/Open%20Source-%E2%9D%A4-brightgreen.svg">
   </a>
 </p>
@@ -53,7 +53,7 @@ THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS
 $ cd /opt/
 
 # Clone this repository
-$ git clone https://github.com/Technowlogy-Pushpender/subdover.git
+$ git clone https://github.com/PushpenderIndia/subdover.git
 
 # Navigate to subdover folder
 $ cd subdover
