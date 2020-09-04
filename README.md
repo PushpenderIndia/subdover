@@ -14,9 +14,11 @@
   </a>
 </p>
 
-**Subdover** is a *MultiThreaded* Subdomain Takeover Vulnerability Scanner *Written In Python3*, Which has more than *55+ Fingerprints* of potentially vulnerable serivces. Uses *CNAME record* for verfication of findings. 
+**Subdover** is a *MultiThreaded* Subdomain Takeover Vulnerability Scanner *Written In Python3*, Which has more than *62+ Fingerprints* of potentially vulnerable serivces. Uses *CNAME record* for verfication of findings. 
 
 Built-in Subdomain Enumeration Feature & Auto HTTP prober [Uses Open Source Tool for Subdomain Enum & HTTP probing i.e. **findomain** & **httpx**]
+
+Total_Fingerprints(**Aquatone** + **Subjack** + **Subzy** + **SubOver**) <<< Total_Fingerprints(**SubDover**)
 
 ## Disclaimer
 <p align="center">
@@ -198,6 +200,13 @@ $ python subdover.py -s
 | 53. | WishPond        | | | |
 | 54. | Wordpress       | | | |
 | 55. | Zendesk         | | | |
+| 56. | Hubspot         | | | |
+| 57. | ReadTheDocs.org | | | |
+| 58. | LeadPages.com   | | | |
+| 59. | Worksites.net   | | | |
+| 60. | AgileCRM        | | | |
+| 61. | ElasticBeanstalk_AWS_service | | | |
+| 62. | Uberflip        | | | |
 
 #### Will Update This Section Later
 
