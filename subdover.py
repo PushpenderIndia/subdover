@@ -15,6 +15,11 @@ BLUE, RED, WHITE, YELLOW, MAGENTA, GREEN, END = '\33[94m', '\033[91m', '\33[97m'
 
 headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0'}
 
+if os.name in ('ce', 'nt', 'dos'):
+    AttackerSystem = "Windows"
+elif 'posix' in os.name:
+    AttackerSystem = "Linux"
+
 def get_arguments():
     parser = argparse.ArgumentParser(description=f'{RED}SubDover v1.0')
     parser._optionals.title = f"{GREEN}Optional Arguments{YELLOW}"
@@ -51,16 +56,19 @@ def split_list(list_name, total_part_num):
     return final_list    
     
 def enumSubdomain(domain):
-    if os.name in ('ce', 'nt', 'dos'):
+    if AttackerSystem == "Windows":
         print("[*] Finding Subdomain Using findomain ...") 
         subprocess.run(f"findomain.exe --output --target {domain}", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
         
-    elif 'posix' in os.name:
+        print(f"[*] Adding Appropriate Web Protocal to Subdomains using httpx ...")
+        subprocess.run(f"type {domain}.txt | httpx -threads 100 -o {domain}-httpx.txt", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+    
+    else:
         print("[*] Finding Subdomain Using findomain ...") 
         subprocess.run(f"findomain --output --target {domain}", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
         
-    print(f"[*] Adding Appropriate Web Protocal to Subdomains using httpx ...")
-    subprocess.run(f"cat {domain}.txt | httpx -threads 100 -o {domain}-httpx.txt", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+        print(f"[*] Adding Appropriate Web Protocal to Subdomains using httpx ...")
+        subprocess.run(f"cat {domain}.txt | httpx -threads 100 -o {domain}-httpx.txt", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
      
     print(f"[*] Saving Subdomains in TXT file ...")
     os.remove(f"{domain}.txt")
@@ -175,7 +183,11 @@ if __name__ == '__main__':
         elif arguments.subdomain_list:
             print("==================================================================")
             print(f"[*] Adding Appropriate Web Protocal to Subdomains using httpx ...")
-            subprocess.run(f"cat {arguments.subdomain_list} | httpx -threads 100 -o {arguments.subdomain_list}-httpx.txt", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+            
+            if AttackerSystem == "Windows":
+                subprocess.run(f"type {arguments.subdomain_list} | httpx -threads 100 -o {arguments.subdomain_list}-httpx.txt", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+            else:
+                subprocess.run(f"cat {arguments.subdomain_list} | httpx -threads 100 -o {arguments.subdomain_list}-httpx.txt", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
             
             print(f"[*] Writing Subdomains in New TXT file ...")
             os.remove(f"{arguments.subdomain_list}")
