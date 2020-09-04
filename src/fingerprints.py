@@ -6,9 +6,6 @@ Item Order In Fingerprint Lists
 	status 
     cname    
 	fingerprint
-    
-    
-[>>] Total Fingerprints : Subzy[22] + SubJack[18] + Aquatone[3] + SubOver[11] == 55
 
 Available Fingerprints
 ======================
@@ -455,7 +452,63 @@ f55 = [
 		"Not Vulnerable",
         ["zendesk.com"],
 		"Help Center Closed"
-	]  
+	]
     
 
-fingerprints_list = [f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13,f14,f15,f16,f17,f18,f19,f20,f21,f22,f23,f24,f25,f26,f27,f28,f29,f30,f31,f32,f33,f34,f35,f36,f37,f38,f39,f40,f41,f42,f43,f44,f45,f46,f47,f48,f49,f50,f51,f52,f53,f54,f55]
+    
+"""
+Newly Added Fingerprints
+""" 
+
+f56 = [
+        "Hubspot",
+        "Vulnerable",   ##Not Sure
+        ["sites.hubspot.net"],
+        "Domain Not found",
+    ]    
+
+f57 = [
+        "ReadTheDocs.org",
+        "Vulnerable",
+        ["readthedocs.io"],
+        "is unknown to Read the Docs"
+    ] 
+
+f58 = [
+        "LeadPages.com",
+        "Vulnerable",
+        ["custom-proxy.leadpages.net", "leadpages.net"],
+        "Double check that you have the right web address and give it another go!</p>"
+    ] 
+
+f59 = [
+        "Worksites.net",
+        "Vulnerable",
+        ["NOT_AVAILABLE"],
+        "Hello! Sorry, but the website you&rsquo;re looking for doesn&rsquo;t exist."
+        ## A Record IP ==> 69.164.223.206
+    ] 
+
+f60 = [
+        "AgileCRM",
+        "Vulnerable",
+        ["cname.agilecrm.com", "agilecrm.com"],
+        "Sorry, this page is no longer available."
+    ] 
+
+f61 = [
+        "ElasticBeanstalk_AWS_service",
+        "Vulnerable",
+        ["elasticbeanstalk.com"],
+        "" #No Fingerprint Available
+    ] 
+
+f62 = [
+        "Uberflip",
+        "Vulnerable",
+        ["read.uberflip.com", "uberflip.com"],
+        "Non-hub domain, The URL you've accessed does not provide a hub. Please check the URL and try again."
+    ]     
+    
+
+fingerprints_list = [f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13,f14,f15,f16,f17,f18,f19,f20,f21,f22,f23,f24,f25,f26,f27,f28,f29,f30,f31,f32,f33,f34,f35,f36,f37,f38,f39,f40,f41,f42,f43,f44,f45,f46,f47,f48,f49,f50,f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61,f62]
