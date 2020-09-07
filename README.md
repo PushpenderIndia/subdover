@@ -14,11 +14,11 @@
   </a>
 </p>
 
-**Subdover** is a *MultiThreaded* Subdomain Takeover Vulnerability Scanner *Written In Python3*, Which has more than *70+ Fingerprints* of potentially vulnerable serivces. Uses *CNAME record* for verfication of findings. 
+**Subdover** is a *MultiThreaded* Subdomain Takeover Vulnerability Scanner *Written In Python3*, Which has more than *70+ Fingerprints* of potentially vulnerable serivces. Uses *CNAME record* for verification of findings. 
 
 Built-in Subdomain Enumeration Feature & Auto HTTP prober [Uses Open Source Tool for Subdomain Enum & HTTP probing i.e. **findomain** & **httpx**]
 
-Total_Fingerprints(**Aquatone** + **Subjack** + **Subzy** + **SubOver**) <<< Total_Fingerprints(**SubDover**)
+> Total_Fingerprints(**Aquatone** + **Subjack** + **Subzy** + **SubOver**) <<< Total_Fingerprints(**SubDover**)
 
 ## Disclaimer
 <p align="center">
@@ -233,8 +233,6 @@ $ echo subdover=python "%pentestbox_ROOT%\bin\customtools\subdover\subdover.py" 
 | 68. | Worksites.net               | Vulnerable | `['NOT_AVAILABLE']` | `Hello! Sorry, but the website you&rsquo;re looking for doesn&rsquo;t exist.` |
 | 69. | Wordpress                   | Vulnerable | `['wordpress.com']` | `Do you want to register ` |
 | 70. | Zendesk                     | Not Vulnerable | `['zendesk.com']` | `Help Center Closed` |
-
-#### Will Update This Section Later
 
 ## Screenshots
 
