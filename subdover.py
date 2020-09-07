@@ -48,10 +48,16 @@ def check_and_update():
     
     with open(f"{subdover_dir}version.txt", "r") as currentVersion:
         if currentVersion.read() != ongoing_version:
-            subprocess.call(["git", "pull", "origin", "master"])
+            print(f"{YELLOW}[*] Installing Subdover v{ongoing_version}")
+            subprocess.run("git pull origin master", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
             print(f"{GREEN}[+] Updated to latest version: v{ongoing_version}..")
+            
+            with open(f"{subdover_dir}version.txt", "w") as f:
+                f.write(ongoing_version)
+            sys.exit()
         else:
             print(f"{GREEN}[+] Subdover is already Up-to-Date: v{ongoing_version}..")
+            sys.exit()
 
 
 def readTargetFromFile(filepath):
