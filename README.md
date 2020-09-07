@@ -161,70 +161,80 @@ $ echo subdover=python "%pentestbox_ROOT%\bin\customtools\subdover\subdover.py" 
 
 ## Available Fingerprints & CNAMES of potentially vulnerable servies
 
-| No. | Service Name    | Status | CNAME | Fingerprints |
-| --- | ------------    | ------ | ----- | ------------ |
-| 1.  | Acquia          | | | |
-| 2.  | Activecampaign  | | | |
-| 3.  | AfterShip       | | | |
-| 4.  | Aha             | | | |
-| 5.  | Apigee          | | | |
-| 6.  | AWS/S3          | | | |      
-| 7.  | Bigcartel       | | | |
-| 8.  | Bitbucket       | | | |
-| 9.  | Brightcove      | | | |
-| 10. | CampaignMonitor | | | |
-| 11. | Cargo           | | | |
-| 12. | CargoCollective | | | |
-| 13. | Cloudfront      | | | |
-| 14. | Desk            | | | |
-| 15. | Fastly          | | | |
-| 16. | Feedpress       | | | |
-| 17. | Freshdesk       | | | |
-| 18. | GetResponse     | | | |
-| 19. | Ghost           | | | |
-| 20. | Github          | | | |
-| 21. | Help Juice      | | | |
-| 22. | Help Scout      | | | |
-| 23. | Heroku          | | | |
-| 24. | Instapage       | | | |
-| 25. | InterCom        | | | |
-| 26. | JetBrains       | | | |
-| 27. | Kajabi          | | | |
-| 28. | Mashery         | | | |
-| 29. | MicrosoftAzure  | | | |
-| 30. | Pantheon        | | | |
-| 31. | Pingdom         | | | |
-| 32. | Proposify       | | | |
-| 33. | Readme.io       | | | |
-| 34. | Shopify         | | | |
-| 35. | SimpleBooklet   | | | |
-| 36. | Smartling       | | | |
-| 37. | Smugmug         | | | |
-| 38. | StatusPage      | | | |
-| 39. | Strikingly      | | | |
-| 40. | Surge.sh        | | | |
-| 41. | Surveygizmo     | | | |
-| 42. | Tave            | | | |
-| 43. | Teamwork        | | | |
-| 44. | Thinkific       | | | |
-| 45. | Tictail         | | | |
-| 46. | Tilda           | | | |
-| 47. | Tumblr          | | | |
-| 48. | Unbounce        | | | |
-| 49. | UptimeRobot     | | | |
-| 50. | UserVoice       | | | |
-| 51. | Vend            | | | |
-| 52. | WebFlow         | | | |
-| 53. | WishPond        | | | |
-| 54. | Wordpress       | | | |
-| 55. | Zendesk         | | | |
-| 56. | Hubspot         | | | |
-| 57. | ReadTheDocs.org | | | |
-| 58. | LeadPages.com   | | | |
-| 59. | Worksites.net   | | | |
-| 60. | AgileCRM        | | | |
-| 61. | ElasticBeanstalk_AWS_service | | | |
-| 62. | Uberflip        | | | |
+| No. | Service Name    			| Status     | CNAME | Fingerprints |
+| --- | ------------   		        | ------     | ----- | ------------ |
+| 1.  | Acquia                      | Vulnerable | ['acquia-test.co'] | `The site you are looking for could not be found.` |
+| 2.  | ActiveCampaign              | Vulnerable | ['activehosted.com'] | `alt="LIGHTTPD - fly light."` |
+| 3.  | AfterShip                   | Vulnerable | ['aftership.com'] | `Oops.</h2><p class="text-muted text-tight">The page you're looking for doesn't exist.` |
+| 4.  | AgileCRM                    | Vulnerable | ['cname.agilecrm.com', 'agilecrm.com'] | `Sorry, this page is no longer available.` |
+| 5.  | Aha                         | Vulnerable | ['ideas.aha.io'] | `There is no portal here ... sending you back to Aha!` |
+| 6.  | Airee.ru                    | Vulnerable | ['cdn.airee.com', 'airee.com'] | `Ошибка 402. Сервис Айри.рф не оплачен` |
+| 7.  | Anima                       | Vulnerable | ['NOT_AVAILABLE'] | `If this is your website and you've just created it, try refreshing in a minute` |
+| 8.  | Apigee                      | Vulnerable | ['-portal.apigee.net'] |  |
+| 9.  | AWS/S3                      | Vulnerable | ['amazonaws'] | `The specified bucket does not exist` |
+| 10. | Bigcartel                   | Vulnerable | ['bigcartel.com'] | `<h1>Oops! We could&#8217;t find that page.</h1>` |
+| 11. | Bitbucket                   | Vulnerable | ['bitbucket.io'] | `Repository not found` |
+| 12. | Brightcove                  | Vulnerable | ['bcvp0rtal.com', 'brightcovegallery.com', 'gallery.video'] | `<p class="bc-gallery-error-code">Error Code: 404</p>` |
+| 13. | Canny.io                    | Vulnerable | ['cname.canny.io'] | `There is no such company. Did you enter the right URL?` |
+| 14. | CampaignMonitor             | Vulnerable | ['createsend.com', 'name.createsend.com'] | `Double check the URL or <a href="mailto:help@createsend.com` |
+| 15. | Cargo                       | Vulnerable | ['cargocollective.com'] | `If you're moving your domain away from Cargo you must make this configuration through your registrar's DNS control panel.` |
+| 16. | CargoCollective             | Vulnerable | ['subdomain.cargocollective.com'] | `404 Not Found` |
+| 17. | Cloudfront                  | Edge case  | ['cloudfront.net'] | `Bad Request: ERROR: The request could not be satisfied` |
+| 18. | Desk                        | Not vulnerable | ['desk.com'] | `Please try again or try Desk.com free for 14 days.` |
+| 19. | ElasticBeanstalk_AWS_service| Vulnerable | ['elasticbeanstalk.com'] |  |
+| 20. | Fastly                      | Edge case  | ['fastly.net'] | `Fastly error: unknown domain:` |
+| 21. | Feedpress                   | Vulnerable | ['redirect.feedpress.me'] | `The feed has not been found.` |
+| 22. | Freshdesk                   | Vulnerable | ['freshdesk.com'] | `May be this is still fresh!` |
+| 23. | Frontify                    | Vulnerable | ['frontify.com'] | `404 - Page not found. Oops... look like you got lost.` |
+| 24. | GetResponse                 | Vulnerable | ['.gr8.com'] | `With GetResponse Landing Pages, lead generation has never been easier` |
+| 25. | Ghost                       | Vulnerable | ['ghost.io'] | `The thing you were looking for is no longer here, or never was` |
+| 26. | Github                      | Vulnerable | ['github.io'] | `There isn't a GitHub Pages site here.` |
+| 27. | Help Juice                  | Vulnerable | ['helpjuice.com'] | `We could not find what you're looking for` |
+| 28. | Helprace                    | Vulnerable | ['helprace.com'] | `Admin of this Helprace account needs to set up domain alias` |
+| 29. | Help Scout                  | Vulnerable | ['helpscoutdocs.com'] | `No settings were found for this company` |
+| 30. | Heroku                      | Edge case  | ['herokuapp'] | `No such app` |
+| 31. | Hubspot                     | Vulnerable | ['sites.hubspot.net'] | `Domain Not found` |
+| 32. | Instapage                   | Vulnerable | ['pageserve.co', 'secure.pageserve.co', 'https://instapage.com/'] | `You've Discovered A Missing Link. Our Apologies!` |
+| 33. | InterCom                    | Vulnerable | ['custom.intercom.help'] | `<h1 class="headline"Uh oh. That page doesn't exist.</h1>` |
+| 34. | JetBrains                   | Vulnerable | ['myjetbrains.com'] | `is not a registered InCloud YouTrack` |
+| 35. | Kajabi                      | Vulnerable | ['endpoint.mykajabi.com'] | `<h1>The page you were looking for doesn't exist.</h1>` |
+| 36. | Landingi                    | Vulnerable | ['cname.landingi.com'] | `<p>The page you are looking for is not found.</p>` |
+| 37. | LaunchRock                  | Vulnerable | ['launchrock.com'] | `It looks like you may have taken a wrong turn somewhere. Don't worry...it happens to all of us.` |
+| 38. | LeadPages.com               | Vulnerable | ['custom-proxy.leadpages.net', 'leadpages.net'] | `Double check that you have the right web address and give it another go!</p>` |
+| 39. | Mashery                     | Edge Case  | ['mashery.com'] | `Unrecognized domain` |
+| 40. | MicrosoftAzure              | Vulnerable | ['cloudapp.net', 'cloudapp.azure.com', 'azurewebsites.net', 'blob.core.windows.net', 'cloudapp.azure.com', 'azure-api.net', 'azurehdinsight.net', 'azureedge.net', 'azurecontainer.io', 'database.windows.net', 'azuredatalakestore.net', 'search.windows.net', 'azurecr.io', 'redis.cache.windows.net', 'azurehdinsight.net', 'servicebus.windows.net', 'visualstudio.com'] | `404 Web Site not found` |
+| 41. | Ngrok                       | Vulnerable | ['ngrok.io'] | `ngrok.io not found` |
+| 42. | Pantheon                    | Vulnerable | ['pantheonsite.io'] | `The gods are wise, but do not know of the site which you seek.` |
+| 43. | Pingdom                     | Vulnerable | ['stats.pingdom.com'] | `This public report page has not been activated by the user` |
+| 44. | Proposify                   | Vulnerable | ['proposify.biz'] | `If you need immediate assistance, please contact <a href="mailto:support@proposify.biz` |
+| 45. | Readme.io                   | Vulnerable | ['readme.io'] | `Project doesnt exist... yet!` |
+| 46. | ReadTheDocs.org             | Vulnerable | ['readthedocs.io'] | `is unknown to Read the Docs` |
+| 47. | Shopify                     | Edge Case  | ['myshopify.com'] | `Sorry, this shop is currently unavailable` |
+| 48. | SimpleBooklet               | Vulnerable | ['simplebooklet.com'] | `We can't find this <a href="https://simplebooklet.com` |
+| 49. | Smartling                   | Vulnerable | ['smartling.com'] | `Domain is not configured` |
+| 50. | Smugmug                     | Vulnerable | ['domains.smugmug.com'] |  |
+| 51. | StatusPage                  | Vulnerable | ['statuspage.io'] | `You are being <a href="https://www.statuspage.io">redirected` |
+| 52. | Strikingly                  | Vulnerable | ['.s.strikinglydns.com'] | `But if you're looking to build your own website,` |
+| 53. | Surge.sh                    | Vulnerable | ['surge.sh'] | `project not found` |
+| 54. | Surveygizmo                 | Vulnerable | ['privatedomain.sgizmo.com', 'privatedomain.surveygizmo.eu', 'privatedomain.sgizmoca.com'] | `data-html-name` |
+| 55. | Tave                        | Vulnerable | ['clientaccess.tave.com'] | `<h1>Error 404: Page Not Found</h1>` |
+| 56. | Teamwork                    | Vulnerable | ['teamwork.com'] | `Oops - We didn't find your site.` |
+| 57. | Thinkific                   | Vulnerable | ['thinkific.com'] | `You may have mistyped the address or the page may have moved.` |
+| 58. | Tictail                     | Vulnerable | ['domains.tictail.com'] | `to target URL: <a href="https://tictail.com` |
+| 59. | Tilda                       | Edge Case  | ['tilda.ws'] | `Please renew your subscription` |
+| 60. | Tumblr                      | Vulnerable | ['domains.tumblr.com'] | `Whatever you were looking for doesn't currently exist at this address` |
+| 61. | Uberflip                    | Vulnerable | ['read.uberflip.com', 'uberflip.com'] | `Non-hub domain, The URL you've accessed does not provide a hub. Please check the URL and try again.` |
+| 62. | Unbounce                    | Edge Case  | ['unbouncepages.com'] | `The requested URL was not found on this server` |
+| 63. | UptimeRobot                 | Vulnerable | ['stats.uptimerobot.com'] | `This public status page <b>does not seem to exist</b>.` |
+| 64. | UserVoice                   | Vulnerable | ['uservoice.com'] | `This UserVoice subdomain is currently available` |
+| 65. | Vend                        | Vulnerable | ['vendecommerce.com'] | `Looks like you've traveled too far into cyberspace` |
+| 66. | WebFlow                     | Vulnerable | ['proxy.webflow.com', 'proxy-ssl.webflow.com'] | `<p class="description">The page you are looking for doesn't exist or has been moved.</p>` |
+| 67. | WishPond                    | Vulnerable | ['wishpond.com'] | `https://www.wishpond.com/404?campaign=true` |
+| 68. | Worksites.net               | Vulnerable | ['NOT_AVAILABLE'] | `Hello! Sorry, but the website you&rsquo;re looking for doesn&rsquo;t exist.` |
+| 69. | Wordpress                   | Vulnerable | ['wordpress.com'] | `Do you want to register ` |
+| 70. | Zendesk                     | Not Vulnerable | ['zendesk.com'] | `Help Center Closed` |
+
+
 
 #### Will Update This Section Later
 
