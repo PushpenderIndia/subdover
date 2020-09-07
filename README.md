@@ -64,8 +64,9 @@ $ cd subdover
 $ apt-get update && apt-get install python3-pip
 $ pip3 install -r requirements.txt
 
-# If you want to enumerate subdomain using this script only, then you have to install findomain in your OS
-$ # Check out this URL for Installtion Guide: https://github.com/Edu4rdSHL/findomain
+# NOTE : Install findomain & httpx On your Linux OS
+# Installtion Guide (findomain) : https://github.com/Edu4rdSHL/findomain
+# Installtion Guide (httpx) : https://github.com/projectdiscovery/httpx
 
 # Giving Executable Permission & Checking Help Menu
 $ chmod +x subdover.py
@@ -121,7 +122,24 @@ $ python subdover.py -d target.com -o result.txt
 
 # Show Fingerprints & Exit
 $ python subdover.py -s
+```
 
+## How to Install Subdover in PentestBox
+```bash
+# Navigate to C:\PentestBox\bin\customtools Directory
+$ cd C:\PentestBox\bin\customtools
+
+# Clone This GitHub Repo
+$ git clone https://github.com/PushpenderIndia/subdover.git
+
+# Navigate to subdover folder
+$ cd subdover
+
+# Install Python Dependencies
+$ python -m pip install -r requirements.txt
+
+# Add Console Shortcut/Alias In PentestBox
+$ echo subdover=python "%pentestbox_ROOT%\bin\customtools\subdover\subdover.py" $* >> ../customaliases
 ```
 
 ## Available Arguments 
