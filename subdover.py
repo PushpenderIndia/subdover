@@ -29,12 +29,30 @@ def get_arguments():
     parser._optionals.title = f"{GREEN}Optional Arguments{YELLOW}"
     parser.add_argument("-t", "--thread", dest="thread", help="Number of Threads to Used. Default=10", default=10)
     parser.add_argument("-o", "--output", dest="output", help="Save Result in TXT file")
+    parser.add_argument("--update", dest="check_and_update", help="Check & Update Subdover", action='store_true')
     parser.add_argument("-s", "--fingerprints", dest="show_fingerprint", help="Show Available Fingerprints & Exit", action='store_true')   
     
     required_arguments = parser.add_argument_group(f'{RED}Required Arguments{GREEN}')
     required_arguments.add_argument("-d", "--domain", dest="domain", help="Target Wildcard Domain [For AutoSubdomainEnumeration], ex:- google.com")
     required_arguments.add_argument("-l", "--list", dest="subdomain_list", help="Target Subdomain List, ex:- google_subdomain.txt")
     return parser.parse_args()
+
+def check_and_update():            
+    try:
+        ongoing_version = requests.get("https://raw.githubusercontent.com/PushpenderIndia/subdover/master/version.txt")
+    except Exception:
+        print(f"{WHITE}[{RED}ERR{WHITE}] No Internet Connection")
+        sys.exit()
+        
+    ongoing_version = ongoing_version.text.strip()
+    
+    with open(f"{subdover_dir}version.txt", "r") as currentVersion:
+        if currentVersion.read() != ongoing_version:
+            subprocess.call(["git", "pull", "origin", "master"])
+            print(f"{GREEN}[+] Updated to latest version: v{ongoing_version}..")
+        else:
+            print(f"{GREEN}[+] Subdover is already Up-to-Date: v{ongoing_version}..")
+
 
 def readTargetFromFile(filepath):
     """
@@ -171,8 +189,23 @@ if __name__ == '__main__':
             f.write("       (Tool Author: Pushpender | GitHub: Technowlogy-Pushpender)\n")
             f.write("+======================================================================+\n")
             f.write("| Potentially Vulnerable Targets to Subdomain Takeover (DNS Hijacking) |\n")
-            f.write("+======================================================================+\n")            
-    
+            f.write("+======================================================================+\n")
+
+    if arguments.check_and_update:
+        if AttackerSystem == "Windows":
+            try:
+                git_path = subprocess.check_output("where git", shell=True)
+                check_and_update()
+            except Exception:
+                print(f"{WHITE}[{RED}ERR{WHITE}] GIT is NOT Installed on Your System! You can't use AutoUpdater .") 
+                sys.exit()
+        else:
+            try:
+                git_path = subprocess.check_output("which git", shell=True)
+                check_and_update()
+            except Exception:
+                print(f"{WHITE}[{RED}ERR{WHITE}] GIT is NOT Installed on Your System! You can't use AutoUpdater .")              
+                sys.exit()
     try:
         if arguments.show_fingerprint:
             print("+------------------------+")
