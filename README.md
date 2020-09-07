@@ -14,7 +14,7 @@
   </a>
 </p>
 
-**Subdover** is a *MultiThreaded* Subdomain Takeover Vulnerability Scanner *Written In Python3*, Which has more than *62+ Fingerprints* of potentially vulnerable serivces. Uses *CNAME record* for verfication of findings. 
+**Subdover** is a *MultiThreaded* Subdomain Takeover Vulnerability Scanner *Written In Python3*, Which has more than *70+ Fingerprints* of potentially vulnerable serivces. Uses *CNAME record* for verfication of findings. 
 
 Built-in Subdomain Enumeration Feature & Auto HTTP prober [Uses Open Source Tool for Subdomain Enum & HTTP probing i.e. **findomain** & **httpx**]
 
@@ -28,16 +28,16 @@ Total_Fingerprints(**Aquatone** + **Subjack** + **Subzy** + **SubOver**) <<< Tot
 THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS SOFTWARE AT YOUR OWN RISK. THE USE IS COMPLETE RESPONSIBILITY OF THE END-USER. THE DEVELOPERS ASSUME NO LIABILITY AND ARE NOT RESPONSIBLE FOR ANY MISUSE OR DAMAGE CAUSED BY THIS PROGRAM.
 
 ## Features
-- [x] More than 55+ Fingerprints of potentially vulnerable services
+- [x] More than 70+ Fingerprints of potentially vulnerable services
 - [x] Uses CNAME record for verification of findings
-- [x] Built-in Subdomain Enumeration Method [Used findomain for Subdomain Enum]
+- [x] Built-in Subdomain Enumeration Method [**Used findomain for Subdomain Enum**]
 - [x] Can Scan targets from subdomain list
 - [x] Can Test Single Target for Subdomain Takeover 
-- [x] MultiThread, Extermely Fast Scanner [Default Threads: 10]
+- [x] MultiThread, Extermely Fast Scanner [**Default Threads: 10**]
 - [x] You can choose number of threads
 - [X] You can save result in TXT file
 - [x] Extremely Clean Output
-- [x] OS Independent [Can be used on any OS which supports Python3]
+- [x] OS Independent [**Can be used on any OS which supports Python3**]
 
 
 ## Tested On
