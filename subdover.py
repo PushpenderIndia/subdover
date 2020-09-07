@@ -1,4 +1,3 @@
-
 from src.fingerprints import * 
 import requests
 import argparse
@@ -19,6 +18,11 @@ if os.name in ('ce', 'nt', 'dos'):
     AttackerSystem = "Windows"
 elif 'posix' in os.name:
     AttackerSystem = "Linux"
+
+# Declearing Environmental Path for Subdover    
+subdover_dir = str(os.path.realpath(__file__)).replace("subdover.py", "").replace("\\", "/")
+findomain_path = subdover_dir + "externals/findomain.exe"
+httpx_path = subdover_dir + "externals/httpx.exe"
 
 def get_arguments():
     parser = argparse.ArgumentParser(description=f'{RED}SubDover v1.0')
@@ -58,11 +62,10 @@ def split_list(list_name, total_part_num):
 def enumSubdomain(domain):
     if AttackerSystem == "Windows":
         print("[*] Finding Subdomain Using findomain ...") 
-        subprocess.run(f"findomain.exe --output --target {domain}", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
-        
+        subprocess.run(f"{findomain_path} --output --target {domain}", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+
         print(f"[*] Adding Appropriate Web Protocal to Subdomains using httpx ...")
-        subprocess.run(f"type {domain}.txt | httpx -threads 100 -o {domain}-httpx.txt", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
-    
+        subprocess.run(f"type {domain}.txt | \"{httpx_path}\" -threads 100 -o {domain}-httpx.txt", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
     else:
         print("[*] Finding Subdomain Using findomain ...") 
         subprocess.run(f"findomain --output --target {domain}", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
@@ -185,7 +188,7 @@ if __name__ == '__main__':
             print(f"[*] Adding Appropriate Web Protocal to Subdomains using httpx ...")
             
             if AttackerSystem == "Windows":
-                subprocess.run(f"type {arguments.subdomain_list} | httpx -threads 100 -o {arguments.subdomain_list}-httpx.txt", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+                subprocess.run(f"type {arguments.subdomain_list} | \"{httpx_path}\" -threads 100 -o {arguments.subdomain_list}-httpx.txt", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
             else:
                 subprocess.run(f"cat {arguments.subdomain_list} | httpx -threads 100 -o {arguments.subdomain_list}-httpx.txt", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
             
@@ -193,7 +196,7 @@ if __name__ == '__main__':
             os.remove(f"{arguments.subdomain_list}")
             os.rename(f"{arguments.subdomain_list}-httpx.txt", f"{arguments.subdomain_list}")
             print(f"[+] Done !")
-            print("==================================================================")        
+            print("==================================================================\n")        
             subdomain_list = readTargetFromFile(arguments.subdomain_list)
             
             final_subdomain_list = split_list(subdomain_list, int(arguments.thread))
