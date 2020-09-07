@@ -25,7 +25,7 @@ findomain_path = subdover_dir + "externals/findomain.exe"
 httpx_path = subdover_dir + "externals/httpx.exe"
 
 def get_arguments():
-    parser = argparse.ArgumentParser(description=f'{RED}SubDover v1.1')
+    parser = argparse.ArgumentParser(description=f'{RED}SubDover v1.2')
     parser._optionals.title = f"{GREEN}Optional Arguments{YELLOW}"
     parser.add_argument("-t", "--thread", dest="thread", help="Number of Threads to Used. Default=10", default=10)
     parser.add_argument("-o", "--output", dest="output", help="Save Result in TXT file")
