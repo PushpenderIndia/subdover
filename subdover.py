@@ -227,13 +227,16 @@ if __name__ == '__main__':
             print(f"[*] Adding Appropriate Web Protocal to Subdomains using httpx ...")
             
             if AttackerSystem == "Windows":
-                subprocess.run(f"type {arguments.subdomain_list} | \"{httpx_path}\" -threads 100 -o {arguments.subdomain_list}-httpx.txt", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+                subprocess.run(f"type '{arguments.subdomain_list}' | '{httpx_path}' -threads 100 -o " + arguments.subdomain_list.replace(" ", "_") + "-httpx.txt", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
             else:
-                subprocess.run(f"cat {arguments.subdomain_list} | httpx -threads 100 -o {arguments.subdomain_list}-httpx.txt", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+                subprocess.run(f"cat '{arguments.subdomain_list}' | httpx -threads 100 -o " + arguments.subdomain_list.replace(" ", "_") + "-httpx.txt", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
             
             print(f"[*] Writing Subdomains in New TXT file ...")
-            os.remove(f"{arguments.subdomain_list}")
-            os.rename(f"{arguments.subdomain_list}-httpx.txt", f"{arguments.subdomain_list}")
+            try:
+                os.remove(arguments.subdomain_list.replace(" ", "_"))
+            except:
+                pass
+            os.rename(arguments.subdomain_list.replace(" ", "_")+"-httpx.txt", arguments.subdomain_list.replace(" ", "_"))
             print(f"[+] Done !")
             print("==================================================================\n")        
             subdomain_list = readTargetFromFile(arguments.subdomain_list)
