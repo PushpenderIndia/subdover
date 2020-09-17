@@ -7,7 +7,7 @@
     <img src="https://img.shields.io/badge/License-BSD%203-lightgrey.svg">
   </a>
   <a href="https://github.com/PushpenderIndia/subdover/releases">
-    <img src="https://img.shields.io/badge/Release-1.0-blue.svg">
+    <img src="https://img.shields.io/badge/Release-1.3-blue.svg">
   </a>
     <a href="https://github.com/PushpenderIndia/subdover">
     <img src="https://img.shields.io/badge/Open%20Source-%E2%9D%A4-brightgreen.svg">
@@ -38,6 +38,7 @@ THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS
 - [X] You can save result in TXT file
 - [x] Extremely Clean Output
 - [x] OS Independent [**Can be used on any OS which supports Python3**]
+- [X] Auto Command Line Updater
 
 
 ## Tested On
@@ -150,6 +151,7 @@ $ echo subdover=python "%pentestbox_ROOT%\bin\customtools\subdover\subdover.py" 
 | -h          | --help    | show this help message and exit |
 | -t          | --thread  | Number of Threads to Used. Default=10 |
 | -o          | --output  | Save Result in TXT file|
+|             | --update  | Check & Update Subdover |
 | -s          | --fingerprints  | Show Available Fingerprints & Exit|                  
 
 * Required Arguments
