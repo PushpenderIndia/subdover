@@ -25,7 +25,7 @@ findomain_path = subdover_dir + "externals/findomain.exe"
 httpx_path = subdover_dir + "externals/httpx.exe"
 
 def get_arguments():
-    parser = argparse.ArgumentParser(description=f'{RED}SubDover v1.2')
+    parser = argparse.ArgumentParser(description=f'{RED}SubDover v1.3')
     parser._optionals.title = f"{GREEN}Optional Arguments{YELLOW}"
     parser.add_argument("-t", "--thread", dest="thread", help="Number of Threads to Used. Default=10", default=10)
     parser.add_argument("-o", "--output", dest="output", help="Save Result in TXT file")
@@ -46,19 +46,19 @@ def check_and_update():
         
     ongoing_version = ongoing_version.text.strip()
     
-    with open(f"{subdover_dir}version.txt", "r") as currentVersion:
-        if currentVersion.read() != ongoing_version:
+    with open(subdover_dir+"version.txt", "r") as f:
+        currentVersion = f.read()
+        if currentVersion != ongoing_version:
             print(f"{YELLOW}[*] Installing Subdover v{ongoing_version}")
             subprocess.run("git pull origin master", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
             print(f"{GREEN}[+] Updated to latest version: v{ongoing_version}..")
             
-            with open(f"{subdover_dir}version.txt", "w") as f:
+            with open(subdover_dir+"version.txt", "w") as f:
                 f.write(ongoing_version)
             sys.exit()
         else:
             print(f"{GREEN}[+] Subdover is already Up-to-Date: v{ongoing_version}..")
             sys.exit()
-
 
 def readTargetFromFile(filepath):
     """
