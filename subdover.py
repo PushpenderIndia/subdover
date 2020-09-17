@@ -227,9 +227,9 @@ if __name__ == '__main__':
             print(f"[*] Adding Appropriate Web Protocal to Subdomains using httpx ...")
             
             if AttackerSystem == "Windows":
-                subprocess.run(f"type '{arguments.subdomain_list}' | '{httpx_path}' -threads 100 -o " + arguments.subdomain_list.replace(" ", "_") + "-httpx.txt", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+                subprocess.run(f"type \"{arguments.subdomain_list}\" | \"{httpx_path}\" -threads 100 -o " + arguments.subdomain_list.replace(" ", "_") + "-httpx.txt", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
             else:
-                subprocess.run(f"cat '{arguments.subdomain_list}' | httpx -threads 100 -o " + arguments.subdomain_list.replace(" ", "_") + "-httpx.txt", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+                subprocess.run(f"cat \"{arguments.subdomain_list}\" | httpx -threads 100 -o " + arguments.subdomain_list.replace(" ", "_") + "-httpx.txt", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
             
             print(f"[*] Writing Subdomains in New TXT file ...")
             try:
