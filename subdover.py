@@ -182,7 +182,7 @@ def start_scanning(subdomain_list):
         testTarget(subdomain)     
 
 if __name__ == '__main__':
-    print(f"\t\t{YELLOW}Author: {GREEN}Pushpender Singh  | {YELLOW}GitHub: {GREEN}Technowlogy-Pushpender\n{WHITE}")
+    print(f"\t\t{YELLOW}Author: {GREEN}Pushpender Singh  | {YELLOW}GitHub: {GREEN}PushpenderIndia\n{WHITE}")
     arguments = get_arguments() 
 
     KillThread = False
@@ -192,7 +192,7 @@ if __name__ == '__main__':
             f.write("                   +===============================+\n")
             f.write("                   | SUBDOVER (SUBDomain takeOVER) |\n")
             f.write("                   +===============================+\n\n")
-            f.write("       (Tool Author: Pushpender | GitHub: Technowlogy-Pushpender)\n")
+            f.write("       (Tool Author: Pushpender | GitHub: @PushpenderIndia)\n")
             f.write("+======================================================================+\n")
             f.write("| Potentially Vulnerable Targets to Subdomain Takeover (DNS Hijacking) |\n")
             f.write("+======================================================================+\n")
