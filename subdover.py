@@ -225,7 +225,10 @@ if __name__ == '__main__':
         elif arguments.subdomain_list:
             print("==================================================================")
             print(f"[*] Adding Appropriate Web Protocal to Subdomains using httpx ...")
-            filename = arguments.subdomain_list.split("\\")[-1]
+            if "\\" in arguments.subdomain_list:
+                filename = arguments.subdomain_list.split("\\")[-1]
+            else:
+                filename = arguments.subdomain_list.split("/")[-1]
             
             if AttackerSystem == "Windows":
                 subprocess.run(f"type \"{arguments.subdomain_list}\" | \"{httpx_path}\" -threads 100 -o \"" + arguments.subdomain_list.replace(filename, filename.replace(" ", "_")) + "-httpx.txt\"", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
