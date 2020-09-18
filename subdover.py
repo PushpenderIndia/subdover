@@ -86,7 +86,7 @@ def split_list(list_name, total_part_num):
 def enumSubdomain(domain):
     if AttackerSystem == "Windows":
         print("[*] Finding Subdomain Using findomain ...") 
-        subprocess.run(f"{findomain_path} --output --target {domain}", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+        subprocess.run(f"\"{findomain_path}\" --output --target {domain}", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
 
         print(f"[*] Adding Appropriate Web Protocal to Subdomains using httpx ...")
         subprocess.run(f"type {domain}.txt | \"{httpx_path}\" -threads 100 -o {domain}-httpx.txt", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
