@@ -87,6 +87,8 @@ $ sudo python3 subdover.py -d target.com -o result.txt
 # Show Fingerprints & Exit
 $ sudo python3 subdover.py -s
 
+# Update Subdover Using Command Line Argument (Only Work If you have downloaded subdover via git clone)
+$ sudo python3 subdover.py --update
 ```
 
 ## How To Use in Windows
@@ -119,6 +121,9 @@ $ python subdover.py -d target.com -o result.txt
 
 # Show Fingerprints & Exit
 $ python subdover.py -s
+
+# Update Subdover Using Command Line Argument (Only Work If you have downloaded subdover via git clone)
+$ python subdover.py --update
 ```
 
 ## How to Install Subdover in PentestBox
