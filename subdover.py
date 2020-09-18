@@ -227,23 +227,23 @@ if __name__ == '__main__':
             print(f"[*] Adding Appropriate Web Protocal to Subdomains using httpx ...")
             if "\\" in arguments.subdomain_list:
                 filename = arguments.subdomain_list.split("\\")[-1]
-            else:
-                filename = arguments.subdomain_list.split("/")[-1]
+                
+            elif "\\\\" in arguments.subdomain_list:
+                filename = arguments.subdomain_list.split("\\\\")[-1]
+                
+            elif "/" in arguments.subdomain_list:
+                filename = arguments.subdomain_list.split("/")[-1] 
+                
+            outputFileName = arguments.subdomain_list.replace(filename, filename.replace(" ", "_")) + "_httpx.txt"    
             
             if AttackerSystem == "Windows":
-                subprocess.run(f"type \"{arguments.subdomain_list}\" | \"{httpx_path}\" -threads 100 -o \"" + arguments.subdomain_list.replace(filename, filename.replace(" ", "_")) + "-httpx.txt\"", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+                subprocess.run(f"type \"{arguments.subdomain_list}\" | \"{httpx_path}\" -threads 100 -o \"" + outputFileName + "\"", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
             else:
-                subprocess.run(f"cat \"{arguments.subdomain_list}\" | httpx -threads 100 -o " + arguments.subdomain_list.replace(filename, filename.replace(" ", "_")) + "-httpx.txt", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
-            
-            print(f"[*] Writing Subdomains in New TXT file ...")
-            try:
-                os.remove(arguments.subdomain_list.replace(filename, filename.replace(" ", "_")))
-            except:
-                pass
-            os.rename(arguments.subdomain_list.replace(filename, filename.replace(" ", "_"))+"-httpx.txt", arguments.subdomain_list.replace(filename, filename.replace(" ", "_")))
+                subprocess.run(f"cat \"{arguments.subdomain_list}\" | httpx -threads 100 -o \"" + outputFileName + "\"", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+           
             print(f"[+] Done !")
             print("==================================================================\n")        
-            subdomain_list = readTargetFromFile(arguments.subdomain_list)
+            subdomain_list = readTargetFromFile(outputFileName)
             
             final_subdomain_list = split_list(subdomain_list, int(arguments.thread))
 
