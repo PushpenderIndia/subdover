@@ -234,6 +234,9 @@ if __name__ == '__main__':
             elif "/" in arguments.subdomain_list:
                 filename = arguments.subdomain_list.split("/")[-1] 
                 
+            else:
+                filename = arguments.subdomain_list
+                
             outputFileName = arguments.subdomain_list.replace(filename, filename.replace(" ", "_")) + "_httpx.txt"    
             
             if AttackerSystem == "Windows":
