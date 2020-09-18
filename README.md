@@ -62,34 +62,30 @@ $ git clone https://github.com/PushpenderIndia/subdover.git
 $ cd subdover
 
 # Installing dependencies
-$ apt-get update && apt-get install python3-pip
-$ pip3 install -r requirements.txt
-
-# NOTE : Install findomain & httpx On your Linux OS
-# Installtion Guide (findomain) : https://github.com/Edu4rdSHL/findomain
-# Installtion Guide (httpx) : https://github.com/projectdiscovery/httpx
+$ chmod +x installer_linux.py
+$ sudo python3 installer_linux.py
 
 # Giving Executable Permission & Checking Help Menu
 $ chmod +x subdover.py
-$ python3 subdover.py --help
+$ sudo python3 subdover.py --help
 
 # Testing Single Target [Running Without Giving Parameter]
-$ python3 subdover.py
+$ sudo python3 subdover.py
 
 # Enumerating Subdomain & Testing them for Subdomain Takeover
-$ python3 subdover.py -d target.com 
+$ sudo python3 subdover.py -d target.com 
 
 # Testing targets for Subdomain Takeover from subdomain list
-$ python3 subdover.py --list example_target.txt 
+$ sudo python3 subdover.py --list example_target.txt 
 
 # Changing Number of Threads
-$ python3 subdover.py --thread 30 -d target.com
+$ sudo python3 subdover.py --thread 30 -d target.com
 
 # Saving Result
-$ python3 subdover.py -d target.com -o result.txt
+$ sudo python3 subdover.py -d target.com -o result.txt
 
 # Show Fingerprints & Exit
-$ python3 subdover.py -s
+$ sudo python3 subdover.py -s
 
 ```
 
