@@ -37,6 +37,14 @@ def get_arguments():
     required_arguments.add_argument("-l", "--list", dest="subdomain_list", help="Target Subdomain List, ex:- google_subdomain.txt")
     return parser.parse_args()
 
+def check_dependencies(commandToCheck):
+    a = subprocess.run(str(commandToCheck), shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+    if a.returncode == 0:
+        print(f"{GREEN}[+] {WHITE}{commandToCheck.split()[0]} {GREEN}is Installed on your system.{WHITE}")
+    else:
+        print(f"{RED}[!] {RED}{commandToCheck.split()[0]} is not Installed on your system.{WHITE}")
+        sys.exit()
+
 def check_and_update():            
     try:
         ongoing_version = requests.get("https://raw.githubusercontent.com/PushpenderIndia/subdover/master/version.txt")
@@ -184,6 +192,14 @@ def start_scanning(subdomain_list):
 if __name__ == '__main__':
     print(f"\t\t{YELLOW}Author: {GREEN}Pushpender Singh  | {YELLOW}GitHub: {GREEN}PushpenderIndia\n{WHITE}")
     arguments = get_arguments() 
+    
+    if AttackerSystem == "Linux":
+        print("========================================================")
+        print("[>>] Checking Dependencies ...")
+        print("========================================================")
+        check_dependencies("findomain --version")
+        check_dependencies("httpx -version")
+        print("\n")    
 
     KillThread = False
     
