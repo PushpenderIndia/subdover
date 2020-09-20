@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import os, sys
+import os, subprocess, sys
 from datetime import datetime
 from datetime import date
 
@@ -33,8 +33,8 @@ def install_python_dependencies():
     os.system("pip3 install -r requirements.txt")
 
 def install_golang():
-    result = os.system("go version > /dev/null 2>&1")
-    if result != 0:
+    result = subprocess.run("go version", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+    if result.returncode != 0:
         printWarning(f"golang is not installed. {GREEN}Installing...{WHITE}")
         # Installing package
         os.system("sudo apt install -y golang")
@@ -48,14 +48,14 @@ def install_golang():
         os.system("source .bashrc")
 
 def install_httpx():
-    result = os.system("httpx -version > /dev/null 2>&1")
-    if result != 0:
+    result = subprocess.run("httpx -version", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+    if result.returncode != 0:
         printWarning(f"httpx is not installed. {GREEN}Installing...{WHITE}")
         os.system("git clone https://github.com/projectdiscovery/httpx.git; cd httpx/cmd/httpx; go build; mv httpx /usr/local/bin/")
 
 def install_findomain():
-    result = os.system("findomain > /dev/null 2>&1")
-    if result != 0:
+    result = subprocess.run("findomain --version", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+    if result.returncode != 0:
         printWarning(f"findomain is not installed. {GREEN}Installing...{WHITE}")
         choice = input("[?] Want to Install findomain via (S)ourceCode or From (B)inaries (B/S) ? : ")
         if choice.lower() == "b" or choice.lower == "": 
