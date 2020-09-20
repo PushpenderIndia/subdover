@@ -42,7 +42,7 @@ def check_dependencies(commandToCheck):
     if a.returncode == 0:
         print(f"{GREEN}[+] {WHITE}{commandToCheck.split()[0]} {GREEN}is Installed on your system.{WHITE}")
     else:
-        print(f"{RED}[!] {RED}{commandToCheck.split()[0]} is not Installed on your system.{WHITE}")
+        print(f"{RED}[!] {WHITE}{commandToCheck.split()[0]}{RED} is not Installed on your system.{WHITE}")
         sys.exit()
 
 def check_and_update():            
