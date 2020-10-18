@@ -14,7 +14,7 @@
   </a>
 </p>
 
-**Subdover** is a *MultiThreaded* Subdomain Takeover Vulnerability Scanner *Written In Python3*, Which has more than *70+ Fingerprints* of potentially vulnerable serivces. Uses *CNAME record* for verification of findings. 
+**Subdover** is a *MultiThreaded* Subdomain Takeover Vulnerability Scanner *Written In Python3*, Which has more than *70+ Fingerprints* of potentially vulnerable services. Uses *CNAME record* for verification of findings. 
 
 Built-in Subdomain Enumeration Feature & Auto HTTP prober [Uses Open Source Tool for Subdomain Enum & HTTP probing i.e. **findomain** & **httpx**]
 
@@ -162,7 +162,7 @@ $ echo subdover=python "%pentestbox_ROOT%\bin\customtools\subdover\subdover.py" 
 | -d          | --domain  | Target Wildcard Domain [For AutoSubdomainEnumeration], ex:- google.com |
 | -l          | --list    | Target Subdomain List, ex:- google_subdomain.txt |
 
-## Available Fingerprints & CNAMES of potentially vulnerable servies
+## Available Fingerprints & CNAMES of potentially vulnerable services
 
 | No. | Service Name   			    | Status     | CNAME | Fingerprints |
 | --- | ------------   				| ------     | ----- | ------------ |
@@ -245,7 +245,7 @@ $ echo subdover=python "%pentestbox_ROOT%\bin\customtools\subdover\subdover.py" 
 #### Scan Single Target
 ![](/img/2.Scan_Single_Target.JPG)
 
-#### Enumerate Subdomaun & Scan 
+#### Enumerate Subdomain & Scan 
 ![](/img/3.Enum_Subdomain_And_Scan.JPG)
 
 #### Scan Targets from SubdomainList
