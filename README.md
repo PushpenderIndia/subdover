@@ -236,6 +236,9 @@ $ echo subdover=python "%pentestbox_ROOT%\bin\customtools\subdover\subdover.py" 
 | 68. | Worksites.net               | Vulnerable | `['NOT_AVAILABLE']` | `Hello! Sorry, but the website you&rsquo;re looking for doesn&rsquo;t exist.` |
 | 69. | Wordpress                   | Vulnerable | `['wordpress.com']` | `Do you want to register ` |
 | 70. | Zendesk                     | Not Vulnerable | `['zendesk.com']` | `Help Center Closed` |
+| 71. | Appery.io                   | Vulnerable | `['']` | `<p>This page will be updated automatically when your app is published.</p>` |
+| 72. | Vercel.com                  | Vulnerable | `['']` | `The deployment could not be found on Vercel.` |
+| 73. | Datocms.com                 | Vulnerable | `['']` | `<!doctype html><html><head><meta charset=\"utf-8\"><title>Loading...</title>` |
 
 ## Screenshots
 
