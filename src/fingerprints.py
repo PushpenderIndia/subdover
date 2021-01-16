@@ -79,6 +79,9 @@ Available Fingerprints
 68. Worksites.net
 69. Wordpress
 70. Zendesk
+71. Appery.io
+72. Vercel.com
+73. Datocms.com
 '''
 
 
