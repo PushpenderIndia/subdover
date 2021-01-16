@@ -188,7 +188,7 @@ $ echo subdover=python "%pentestbox_ROOT%\bin\customtools\subdover\subdover.py" 
 | 20. | Fastly                      | Edge case  | `['fastly.net']` | `Fastly error: unknown domain:` |
 | 21. | Feedpress                   | Vulnerable | `['redirect.feedpress.me']` | `The feed has not been found.` |
 | 22. | Freshdesk                   | Vulnerable | `['freshdesk.com']` | `May be this is still fresh!` |
-| 23. | Frontify                    | Vulnerable | `['frontify.com']` | `404 - Page not found. Oops... look like you got lost.` |
+| 23. | Frontify                    | Vulnerable | `['frontify.com']` | `404 - Page Not Found</h1>` |
 | 24. | GetResponse                 | Vulnerable | `['.gr8.com']` | `With GetResponse Landing Pages, lead generation has never been easier` |
 | 25. | Ghost                       | Vulnerable | `['ghost.io']` | `The thing you were looking for is no longer here, or never was` |
 | 26. | Github                      | Vulnerable | `['github.io']` | `There isn't a GitHub Pages site here.` |
