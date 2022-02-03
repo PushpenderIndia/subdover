@@ -7,7 +7,7 @@
     <img src="https://img.shields.io/badge/License-BSD%203-lightgrey.svg">
   </a>
   <a href="https://github.com/PushpenderIndia/subdover/releases">
-    <img src="https://img.shields.io/badge/Release-1.4-blue.svg">
+    <img src="https://img.shields.io/badge/Release-1.5-blue.svg">
   </a>
     <a href="https://github.com/PushpenderIndia/subdover">
     <img src="https://img.shields.io/badge/Open%20Source-%E2%9D%A4-brightgreen.svg">
