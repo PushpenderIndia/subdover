@@ -252,8 +252,8 @@ $ echo subdover=python "%pentestbox_ROOT%\bin\customtools\subdover\subdover.py" 
 | 88. | Hatenablog                  | Vulnerable | `["hatenablog.com"]` | `"404 Blog is not found"` |
 
 * NOTE: Make sure to confirm Vulnerable Subdomain
-* If you a false positive, then you can open a issue in this repo with false +ve results
-* It will help us to decrease the false +ve count
+* If you got a false positive result, then you can open a issue in this repo with that false +ve
+* It will help us to decrease the false +ve count & will improve detection mechanism
 
 ## Screenshots
 
