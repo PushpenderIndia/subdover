@@ -7,14 +7,14 @@
     <img src="https://img.shields.io/badge/License-BSD%203-lightgrey.svg">
   </a>
   <a href="https://github.com/PushpenderIndia/subdover/releases">
-    <img src="https://img.shields.io/badge/Release-1.5-blue.svg">
+    <img src="https://img.shields.io/badge/Release-1.6-blue.svg">
   </a>
     <a href="https://github.com/PushpenderIndia/subdover">
     <img src="https://img.shields.io/badge/Open%20Source-%E2%9D%A4-brightgreen.svg">
   </a>
 </p>
 
-**Subdover** is a *MultiThreaded* Subdomain Takeover Vulnerability Scanner *Written In Python3*, Which has more than *70+ Fingerprints* of potentially vulnerable services. Uses *CNAME record* for verification of findings. 
+**Subdover** is a *MultiThreaded* Subdomain Takeover Vulnerability Scanner *Written In Python3*, Which has more than *88+ Fingerprints* of potentially vulnerable services. Uses *CNAME record* for verification of findings. 
 
 Built-in Subdomain Enumeration Feature & Auto HTTP prober [Uses Open Source Tool for Subdomain Enum & HTTP probing i.e. **findomain** & **httpx**]
 
@@ -43,6 +43,8 @@ THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS
 
 ## Tested On
 [![Kali)](https://www.google.com/s2/favicons?domain=https://www.kali.org/)](https://www.kali.org) **Kali Linux - ROLLING EDITION**
+
+[![Windows)](https://www.google.com/s2/favicons?domain=https://www.microsoft.com/en-in/windows/)](https://www.microsoft.com/en-in/windows/) **Windows 10**
 
 [![Windows)](https://www.google.com/s2/favicons?domain=https://www.microsoft.com/en-in/windows/)](https://www.microsoft.com/en-in/windows/) **Windows 8.1 - Pro**
 
@@ -86,9 +88,6 @@ $ sudo python3 subdover.py -d target.com -o result.txt
 
 # Show Fingerprints & Exit
 $ sudo python3 subdover.py -s
-
-# Update Subdover Using Command Line Argument (Only Work If you have downloaded subdover via git clone)
-$ sudo python3 subdover.py --update
 ```
 
 ## How To Use in Windows
@@ -121,9 +120,6 @@ $ python subdover.py -d target.com -o result.txt
 
 # Show Fingerprints & Exit
 $ python subdover.py -s
-
-# Update Subdover Using Command Line Argument (Only Work If you have downloaded subdover via git clone)
-$ python subdover.py --update
 ```
 
 ## How to Install Subdover in PentestBox
@@ -152,7 +148,7 @@ $ echo subdover=python "%pentestbox_ROOT%\bin\customtools\subdover\subdover.py" 
 | -h          | --help    | show this help message and exit |
 | -t          | --thread  | Number of Threads to Used. Default=10 |
 | -o          | --output  | Save Result in TXT file|
-|             | --update  | Check & Update Subdover |
+| -skip       |--skip-httpx  | Skip HTTP/HTTPS Protocal Resolution (HTTP Probing) [NOTE]: You must manually use httpx/httprobe on your subdomain list & then provide that final subdomains list using --list or -l flag |
 | -s          | --fingerprints  | Show Available Fingerprints & Exit|                  
 
 * Required Arguments
@@ -239,6 +235,25 @@ $ echo subdover=python "%pentestbox_ROOT%\bin\customtools\subdover\subdover.py" 
 | 71. | Appery.io                   | Vulnerable | `['']` | `<p>This page will be updated automatically when your app is published.</p>` |
 | 72. | Vercel.com                  | Vulnerable | `['']` | `The deployment could not be found on Vercel.` |
 | 73. | Datocms.com                 | Vulnerable | `['']` | `<!doctype html><html><head><meta charset=\"utf-8\"><title>Loading...</title>` |
+| 74. | Jazzhr                      | Edge Case  | `["jazzhr.com"]` | `"This account no longer active"` |
+| 75. | Kinsta                      | Vulnerable | `["kinsta.com"]` | `"No Site For Domain"` |
+| 76. | Smartjob                    | Vulnerable | `["smartjobboard.com", "mysmartjobboard.com"]` | `"This job board website is either expired or its domain name is invalid"` |
+| 77. | Wufoo                       | Vulnerable | `["www.wufoo.com", "subdomain.wufoo.com", "hello.wufoo.com", "pizzapalace.wufoo.com"]` | `"Hmmm....something is not right."` |
+| 78. | Wix                         | Vulnerable | `["wixdns.net"]` | `"Error ConnectYourDomain occurred"` |
+| 79. | Sprintful                   | Vulnerable | `["proxy.sprintful.com", "cname.sprintful.com", "sprintful.com"]` | `"This domain name does not have a default page configured."` |
+| 80. | Short-io                    | Vulnerable | `["cname.short.io"]` | `"This domain is not configured on Short.io"` |
+| 81. | Pagewiz                     | Vulnerable | `["s1.pagewiz.net"]` | `"pagewiz"` |
+| 82. | Netlify                     | Edge case  | `["cname.netlify.app", "cname.netlify.com", "netlify.com", "netlify.app"]` | `"Not found - Request ID:"` |
+| 83. | Gitbook                     | Vulnerable | `["gitbook.io"]` | `"Domain not found"` |
+| 84. | Flywheel                    | Vulnerable | `["getflywheel.com"]` | `"We're sorry, you've landed on a page that is hosted by Flywheel"`
+| 85. | Announcekit                 | Vulnerable | `["cname.announcekit.app"]` | `"Error 404 - AnnounceKit"`
+| 86. | Flexbe                      | Edge Case  | `["flexbe.com"]` | `"flexbe"` |
+| 87. | Gemfury                     | Vulnerable | `["furyns.com"]` | `"404: This page could not be found."` |
+| 88. | Hatenablog                  | Vulnerable | `["hatenablog.com"]` | `"404 Blog is not found"` |
+
+* NOTE: Make sure to confirm Vulnerable Subdomain
+* If you a false positive, then you can open a issue in this repo with false +ve results
+* It will help us to decrease the false +ve count
 
 ## Screenshots
 
@@ -267,6 +282,8 @@ $ echo subdover=python "%pentestbox_ROOT%\bin\customtools\subdover\subdover.py" 
 ## TODO
 
 - [ ] Add More Fingerprints & CNAMES 
+- [ ] If in future exisiting `Vulnerable` become `Edge Case` or `Not Vulnerable`, then please tell me know by opening a issue
+
 
 ## Contributers
 

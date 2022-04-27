@@ -712,7 +712,7 @@ fingerprints_list = [
 
     [
         "Flywheel",
-        "vulnerable",
+        "Vulnerable",
         ["getflywheel.com"],
         "We're sorry, you've landed on a page that is hosted by Flywheel"
     ],
