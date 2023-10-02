@@ -289,11 +289,5 @@ $ echo subdover=python "%pentestbox_ROOT%\bin\customtools\subdover\subdover.py" 
 
 * Pushpender (@PushpenderIndia)
 * gauravdrago (@gauravdrago)
-
-## Contact
-
-singhpushpender250@gmail.com 
-
-## More Features Coming Soon...
                         
                         
